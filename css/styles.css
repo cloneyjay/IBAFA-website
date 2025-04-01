@@ -296,9 +296,108 @@ section {
 }
 
 .services-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    position: relative;
+    overflow: hidden;
+    padding: 0 50px;
+}
+
+.services-slider {
+    position: relative;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+.services-slider.slider-initialized {
+    visibility: visible;
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    margin-right: 10px;
+}
+
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: #3498db;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.slider-nav:hover {
+    background: #2980b9;
+}
+
+.slider-prev {
+    left: 0;
+}
+
+.slider-next {
+    right: 0;
+}
+
+.slider-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.slider-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ddd;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.slider-dot.active {
+    background: #3498db;
+}
+
+/* Responsive Slider Styles */
+@media (max-width: 768px) {
+    .services-container,
+    .stories-container,
+    .team-grid {
+        padding: 0 40px;
+    }
+    
+    .slider-nav {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .service-card,
+    .story-card,
+    .team-member {
+        margin: 0 5px;
+    }
+}
+
+@media (max-width: 576px) {
+    .services-container,
+    .stories-container,
+    .team-grid {
+        padding: 0 30px;
+    }
+    
+    .slider-nav {
+        width: 30px;
+        height: 30px;
+    }
 }
 
 .service-card {
@@ -342,9 +441,19 @@ section {
 }
 
 .stories-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    position: relative;
+    overflow: hidden;
+    padding: 0 50px;
+}
+
+.projects-slider {
+    position: relative;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+.projects-slider.slider-initialized {
+    visibility: visible;
 }
 
 .story-card {
@@ -431,9 +540,19 @@ section {
 }
 
 .team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    position: relative;
+    overflow: hidden;
+    padding: 0 50px;
+}
+
+.team-slider {
+    position: relative;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+.team-slider.slider-initialized {
+    visibility: visible;
 }
 
 .team-member {
